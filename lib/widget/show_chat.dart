@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:messenger_app/utils/utils.dart';
 
 class ShowChatWidget extends StatelessWidget {
   const ShowChatWidget({Key? key}) : super(key: key);
@@ -6,16 +7,16 @@ class ShowChatWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: Dimenstions.height20 * 3,
       width: double.maxFinite,
       color: Colors.white,
       child: Row(
         children: [
           Container(
-            height: 45,
-            width: 45,
+            height: Dimenstions.height15 * 3,
+            width: Dimenstions.width15 * 3,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(Dimenstions.radius15),
               color: Colors.blue[200],
               image: const DecorationImage(
                 image: AssetImage('assets/image/person.png'),
@@ -25,23 +26,23 @@ class ShowChatWidget extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              margin: const EdgeInsets.only(
-                left: 20,
+              margin: EdgeInsets.only(
+                left: Dimenstions.width20,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Chat Room Name',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: Dimenstions.font20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     'Date',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: Dimenstions.font14,
                       color: Colors.grey[600],
                     ),
                   ),

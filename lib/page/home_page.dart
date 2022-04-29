@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:messenger_app/utils/utils.dart';
 import 'package:messenger_app/widget/show_chat.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,17 +14,17 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                margin: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 30,
+                margin: EdgeInsets.symmetric(
+                  vertical: Dimenstions.height20,
+                  horizontal: Dimenstions.width30,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
+                    Text(
                       'Chatting',
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: Dimenstions.font24,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -35,14 +36,20 @@ class HomePage extends StatelessWidget {
                             onTap: () {
                               debugPrint('Search icon');
                             },
-                            child: const Icon(Icons.search, size: 30),
+                            child: Icon(
+                              Icons.search,
+                              size: Dimenstions.iconSize30,
+                            ),
                           ),
-                          const SizedBox(width: 10),
+                          SizedBox(width: Dimenstions.width10),
                           GestureDetector(
                             onTap: () {
                               debugPrint('Add message icon');
                             },
-                            child: const Icon(Icons.add_comment_outlined, size: 30),
+                            child: Icon(
+                              Icons.add_comment_outlined,
+                              size: Dimenstions.iconSize30,
+                            ),
                           ),
                         ],
                       ),
@@ -59,9 +66,9 @@ class HomePage extends StatelessWidget {
                           debugPrint('index: $index');
                         },
                         child: Container(
-                          margin: const EdgeInsets.symmetric(
-                            vertical: 5,
-                            horizontal: 20,
+                          margin: EdgeInsets.symmetric(
+                            vertical: Dimenstions.height10 / 2,
+                            horizontal: Dimenstions.width20,
                           ),
                           child: const ShowChatWidget(),
                         ),
