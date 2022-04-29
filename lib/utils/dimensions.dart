@@ -26,4 +26,5 @@ class Dimenstions {
 
   // radius
   static double radius15 = screenHeight / 52.07;
+  static double radius30 = screenHeight / 26.03;
 }

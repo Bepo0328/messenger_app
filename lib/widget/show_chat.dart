@@ -1,8 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:messenger_app/utils/utils.dart';
 
 class ShowChatWidget extends StatelessWidget {
-  const ShowChatWidget({Key? key}) : super(key: key);
+  final String chatRoomName;
+  final DateTime chatRoomDate;
+
+  const ShowChatWidget({
+    Key? key,
+    required this.chatRoomName,
+    required this.chatRoomDate,
+  }) : super(key: key);
+
+  String formatDateTime(DateTime dateTime) {
+    String nowDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
+    String formatDate = DateFormat('yyyy-MM-dd').format(dateTime);
+    if (formatDate == nowDate) {
+      formatDate = DateFormat('a HH:ss').format(dateTime);
+    }
+    return formatDate;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +50,14 @@ class ShowChatWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Chat Room Name',
+                    chatRoomName,
                     style: TextStyle(
                       fontSize: Dimenstions.font20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    'Date',
+                    formatDateTime(chatRoomDate),
                     style: TextStyle(
                       fontSize: Dimenstions.font14,
                       color: Colors.grey[600],
