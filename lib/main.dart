@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Messenger App',
-      home: HomePage(),
+      home: SignInPage(),
     );
   }
 }
